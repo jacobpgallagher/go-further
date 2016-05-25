@@ -1,0 +1,82 @@
+Go Further
+Some more topics in Go
+25 May 2016
+
+Jacob Gallagher
+
+* Talk Summary
+
+Intended to build off of Mike Maelzer's talk.
+
+- Embedding Structs
+- Reflect
+- Gabs and JSON
+- Go-Common
+  Auth Middleware
+  Kinesis
+  Logging
+  API
+
+* Embedding Structs
+.play embedding_interfaces.go /START OMIT/,/END OMIT/
+
+* Embedding Structs (part 2)
+.play embedding_interfaces.go /START MAIN OMIT/,/END MAIN OMIT/
+
+* Embedding Structs/Interfaces caveats
+- Only exported fields/methods are available.
+- Re-implementing unexported methods doesn't work.
+
+* Reflect
+- Go is strongly typed.
+- Interfaces have no type.
+- Going from an interface to a type requires reflection
+As an example, the encoding/json library uses reflect.
+
+* Reflect Struct Field By Name
+.play reflect_by_name.go /START OMIT/,/END OMIT/
+
+* Reflect Tags
+.play reflect_tags.go /START OMIT/,/END OMIT/
+
+* Reflect Caveats
+- Using reflect can be error prone
+.play reflect_panic.go /START OMIT/,/END OMIT/
+
+* Gabs - For making JSON generation less awful
+.play gabs.go /START OMIT/,/END OMIT/
+
+* Go-Common (Auth)
+Bouncer Cookie Middleware
+.code bouncer.go /START OMIT/,/END OMIT/
+OAuth1 Middleware
+.code oauth.go /START OMIT/,/END OMIT/
+Either Or
+.code both_middleware.go /START OMIT/,/END OMIT/
+
+* Go-Common (KinesisWriter)
+.code kinesis_writer.go /START OMIT/,/END OMIT/
+
+* Go-Common (Logging)
+.code logging.go /START OMIT/,/END OMIT/
+
+* Go-Common (API)
+- CRUD API layer built on top of echo
+- Auto-generated swagger docs
+- Currently mimics tastypie, but will soon support JSON-API
+
+* Go-Common API Interface
+.code interface.go
+
+* Go-Common API Usage
+.code api_server.go /START STRUCT_1 OMIT/,/END STRUCT_1 OMIT/
+
+* Go-Common API Usage
+.code api_server.go /START STRUCT_2 OMIT/,/END STRUCT_2 OMIT/
+* Go-Common API Usage
+.code api_server.go /START STRUCT_3 OMIT/,/END STRUCT_3 OMIT/
+* Go-Common API Usage
+.code api_server.go /START STRUCT_4 OMIT/,/END STRUCT_4 OMIT/
+
+* Go-Common API Usage
+.play api_server.go /START MAIN OMIT/,/END MAIN OMIT/
