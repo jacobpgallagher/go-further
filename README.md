@@ -7,7 +7,8 @@ Viewing Slides
 1. Have go installed, and have your `GOPATH` environment vairable set. You can install via `brew`.
 2. Get the present tool `go get golang.org/x/tools/cmd/present`
 3. Clone this project
-4. [Optional] Install all the example dependencies ```
+4. [Optional] Install all the example dependencies
+```
 go get github.com/Jeffail/gabs
 go get github.com/SocialCodeInc/go-common/api
 go get github.com/SocialCodeInc/go-common/echo
